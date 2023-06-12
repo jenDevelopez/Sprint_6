@@ -1,5 +1,18 @@
+import { Frases } from "../data"
+
 export function Escena() {
+
+  let parrafo =Frases.map((frase) => (
+    <p>
+      {frase}
+    </p>
+  ))
+
   return(
-    <p>Nuestro héroe estaba flotando en el espacio lateral cuando a lo lejos vidrió una nave espacial</p>
+    <>
+      <p>
+        {parrafo}
+      </p>
+    </>
   )
 }
