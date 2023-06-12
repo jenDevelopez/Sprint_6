@@ -1,18 +1,21 @@
 import { Frases } from "../data"
-
+import styled from 'styled-components'
 export function Escena() {
-
+  const StyledP = styled.p`
+    padding: 1rem;
+    border: 3px solid #000;
+    border-radius: 20px;
+  `
   let parrafo =Frases.map((frase) => (
-    <p>
+    <StyledP key={frase}>
       {frase}
-    </p>
+    </StyledP>
   ))
+  
 
   return(
     <>
-      <p>
-        {parrafo}
-      </p>
+      {parrafo}
     </>
   )
 }
