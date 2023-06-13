@@ -1,21 +1,24 @@
-import { Frases } from "../data"
 import styled from 'styled-components'
-export function Escena() {
+
+
   const StyledP = styled.p`
     padding: 1rem;
     border: 3px solid #000;
     border-radius: 20px;
+    background-color: ${(props) => (props.coloreado ? "pink" : "white")};
   `
-  let parrafo =Frases.map((frase) => (
-    <StyledP key={frase}>
-      {frase}
-    </StyledP>
-  ))
-  
 
+
+const Escena = ({ frases, indiceActual }) => {
   return(
-    <>
-      {parrafo}
-    </>
+    <div>
+      {frases.map((frase,index) => (
+        <StyledP key={index} coloreado={index === indiceActual}>
+          {frase}
+        </StyledP>
+      ))}
+    </div>
   )
 }
+
+export default Escena
