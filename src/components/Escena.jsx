@@ -1,24 +1,20 @@
-import styled from 'styled-components'
+import { StyledP } from "./styledComponets";
 
 
-  const StyledP = styled.p`
-    padding: 1rem;
-    border: 3px solid #000;
-    border-radius: 20px;
-    background-color: ${(props) => (props.coloreado ? "pink" : "white")};
-  `
 
+const Escena = ({ array,indiceActual }) => {
+  const contenido = array.map((obj,index) => (
+    <StyledP key={obj} coloreado={index === indiceActual}>
+      {obj.txt}
+    </StyledP>
+  ))
+  
 
-const Escena = ({ frases, indiceActual }) => {
-  return(
-    <div>
-      {frases.map((frase,index) => (
-        <StyledP key={index} coloreado={index === indiceActual}>
-          {frase}
-        </StyledP>
-      ))}
-    </div>
-  )
-}
+  return (
+    <>
+      {contenido}
+    </>
+  );
+};
 
-export default Escena
+export default Escena;
